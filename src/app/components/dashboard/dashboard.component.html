@@ -1,0 +1,95 @@
+<div class="page">
+    <!-- <div class="row">
+        <div class="col s12 card">
+            <form action="">
+              <div class="row">
+                <div class="col s12 l6">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="col s12 l6">
+                    <input type="text" placeholder="Ander ding">
+                </div>
+              </div>
+              
+            </form>
+        </div>
+      
+      
+      
+    </div> -->
+    <div class="card horizontal hide">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>HET IS JE BOY REBEL WHOAH</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Close</a>
+          </div>
+        </div>
+      </div>
+    <div class="row">
+            <div class="col s12 l7">
+              <div class="content-area card table-holder">
+                <h5 class="table-title">Hardware</h5>
+                <table class="striped content-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Interactions</th>
+                            <th>States</th>
+                        </tr>
+                      </thead>
+              
+                      <tbody>
+                        <tr *ngFor="let hardware of housethings; index as i">
+                          <td>{{hardware.name}}</td>
+                          <td>
+                            <div *ngFor="let interaction of hardware.interactions">
+                              {{interaction.name}}
+                            </div>
+                          </td>
+                          <td>
+                            <div *ngFor="let state of hardware.state">
+                              {{state.name}}: {{state.state}} 
+                            </div>
+                            
+                          </td>
+                          <td>
+                            <a class = "edit-button" (click)="showDetails(i)"><i class="material-icons">info</i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                </table>
+                <a class="btn-floating btn-large waves-effect waves-light red right add-button" ><i class="material-icons">add</i></a>
+              </div>
+              </div>
+              <div class="col s12 l5 ">
+                <div class="content-area card table-holder">
+                    <h5 class="table-title">Actionlog</h5>
+                    <table class="striped content-table">
+                        <thead>
+                            <tr>
+                                <th>Hardware</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                                <th>State</th>
+                            </tr>
+                          </thead>
+                  
+                          <tbody>
+                            <tr *ngFor="let logItem of actionlog">
+                              <td>{{logItem.hardwareID}}</td>
+                              <td>{{logItem.hardwareName}}</td>
+                              <td>{{logItem.date}}</td>
+                              <td>{{logItem.action}}</td>
+                              <td>{{logItem.state}}</td>
+                            </tr>
+                          </tbody>
+                    </table>
+                </div>
+              
+        </div>
+    </div>
+</div>
+<app-graph class="graph"></app-graph>
