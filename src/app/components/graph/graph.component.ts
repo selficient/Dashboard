@@ -10,7 +10,8 @@ export class GraphComponent implements OnInit {
 // PolarArea
   public linechartLabels: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-  // TODO this needs to be filled with the data provided by the NoSi
+  // TODO this needs to be filled with the data provided by the NoSi Data is too generic, for importing the table
+  // the data should be retrieved by MongoDB
   public linechartData: number[] = [40, 50, 20, 40, 20, 40, 50];
 
   public linechartLegend: Boolean = false;
@@ -53,6 +54,7 @@ export class GraphComponent implements OnInit {
 
  public chartHovered(e: any): void {
   }
+
 
   constructor() { }
 

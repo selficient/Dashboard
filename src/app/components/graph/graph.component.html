@@ -1,6 +1,6 @@
- <div class="graph card">
-   <span class="card-title">Lichten aan per maand</span>
-    <canvas class="graph" baseChart width="300" height="300"
+<div class="graph card">
+  <span class="card-title">Lichten aan per maand</span>
+  <canvas class="graph" baseChart width="300" height="300"
             [data]="linechartData"
             [labels]="linechartLabels"
             [legend]="linechartLegend"
@@ -8,13 +8,14 @@
             [colors]="linechartColors"
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
-    </div>
-    <div class="col-md-6" style="margin-bottom: 10px">
-    <table class="table table-responsive table-condensed">
-      <tr>
-        <th *ngFor="let label of lineChartLabels">{{label}}</th>
-      </tr>
-      <tr *ngFor="let d of lineChartData">
-        <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
-      </tr>
-    </table>
+</div>
+<div class="col-md-6" style="margin-bottom: 10px">
+  <table class="table table-responsive table-condensed">
+    <tr>
+      <th *ngFor="let label of linechartLabels">{{label}}</th>
+    </tr>
+    <tr *ngFor="let d of linechartData">
+      <td *ngFor="let label of linechartLabels; let j=index">{{d && d.data[j]}}</td>
+    </tr>
+  </table>
+</div>
