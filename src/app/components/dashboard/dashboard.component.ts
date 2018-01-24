@@ -7,12 +7,14 @@ import { DatabaseService } from '../../services/database.service';
   providers: [DatabaseService]
 })
 export class DashboardComponent implements OnInit {
-  housethings: Hardware[] = [];
+
+  houseData: Hardware[] = [];
   actionlog: ActionlogItem[];
-  detailsVisable: boolean = false;
+  detailsVisable: Boolean = false;
   hardwareDetail: Hardware;
-  constructor(private databaseService: DatabaseService) { 
-    
+
+  constructor(private databaseService: DatabaseService) {
+
   }
 
   ngOnInit() {
@@ -20,44 +22,47 @@ export class DashboardComponent implements OnInit {
     this.getActionLog();
   }
 
-  getHardware(): void{
-    this.databaseService.fetchHardware().subscribe(data =>{
+  // Retrieves data from MongoDB database
+  getHardware(): void {
+    this.databaseService.fetchHardware().subscribe(data => {
       console.log(data);
-      this.housethings = data;
-    })
-  }
-  getActionLog():void{
-    this.databaseService.fetchActionLog().subscribe(data =>{
-      console.log(data);
-      this.actionlog = data;
-      console.log(this.actionlog)
+      this.houseData = data;
     });
   }
-  refreshData():void {
+  // Retrieves data from MongoDB database
+  getActionLog(): void {
+    this.databaseService.fetchActionLog().subscribe(data => {
+      console.log(data);
+      this.actionlog = data;
+      console.log(this.actionlog);
+    });
+  }
+
+  refreshData(): void {
     this.getHardware();
     this.getActionLog();
   }
-  showDetails(id: number):void {
+  showDetails(id: number): void {
 
   }
 }
 interface Hardware {
-  id: string,
-  name: string,
-  interactions: Interaction[],
-  state: State[]
+  id: string;
+  name: string;
+  interactions: Interaction[];
+  state: State[];
 }
 interface Interaction {
-  name: string,
-  actions: Action[]
+  name: string;
+  actions: Action[];
 }
 interface Action {
-  description: string,
-  code: string
+  description: string;
+  code: string;
 }
 interface State {
-  name: string,
-  state: string
+  name: string;
+  state: string;
 }
 
 interface ActionlogItem {

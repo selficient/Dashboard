@@ -2,29 +2,33 @@
     margin-left: 10px;
     margin: auto;
 }
+
 .content-area {
     margin-left: 4px;
     margin-top: 10px;
 }
-.content-table {
-    
-}
+
 .table-holder {
     max-height: 800px;
     overflow: auto;
 }
+
 .big {
     height: 500px;
 }
+
 .table-title {
     text-align: center;
 }
+
 .add-button {
     margin: 10px;
 }
+
 .edit-button :hover {
     cursor: pointer;
 }
+
 .edit-button {
     text-decoration: none;
     color: gray

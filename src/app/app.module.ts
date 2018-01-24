@@ -19,12 +19,14 @@ const appRoutes: Routes = [
     DashboardComponent,
     GraphComponent
   ],
+
   imports: [
     BrowserModule,
     HttpModule,
     ChartsModule,
     RouterModule.forRoot(appRoutes)
   ],
+
   providers: [DatabaseService],
   bootstrap: [AppComponent]
 })

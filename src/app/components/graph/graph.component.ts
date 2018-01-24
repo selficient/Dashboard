@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GraphComponent implements OnInit {
 
-// PolarArea
+  // documentation of linechart can be found on: http://www.chartjs.org/
   public linechartLabels: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
   // TODO this needs to be filled with the data provided by the NoSi Data is too generic, for importing the table
@@ -16,11 +16,14 @@ export class GraphComponent implements OnInit {
 
   public linechartLegend: Boolean = false;
 
+  // Type of linechart, different types can be found: http://www.chartjs.org/
   public linechartType: String = 'line';
+
   public lineChartOptions: any = {
     responsive: true
   };
 
+  // colors that you can give to the linechart
   public linechartColors: Array<any> = [
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
@@ -48,7 +51,7 @@ export class GraphComponent implements OnInit {
     }
   ];
 
-  // events
+  // events after click can be defined
   public chartClicked(e: any): void {
   }
 
