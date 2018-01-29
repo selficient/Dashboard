@@ -14,8 +14,9 @@
     <tr>
       <th *ngFor="let label of linechartLabels">{{label}}</th>
     </tr>
-    <tr *ngFor="let d of linechartData">
+    <!-- FIXME Commented 3 lines of code due to not having the right data to load in -->
+    <!--<tr *ngFor="let d of linechartData">
       <td *ngFor="let label of linechartLabels; let j=index">{{d && d.data[j]}}</td>
-    </tr>
+    </tr>-->
   </table>
 </div>

@@ -46,29 +46,33 @@ export class DashboardComponent implements OnInit {
 
   }
 }
+
 interface Hardware {
   id: string;
   name: string;
   interactions: Interaction[];
   state: State[];
 }
+
 interface Interaction {
   name: string;
   actions: Action[];
 }
+
 interface Action {
   description: string;
   code: string;
 }
+
 interface State {
   name: string;
   state: string;
 }
 
 interface ActionlogItem {
-  hardwareID: string,
-  hardwareName: string,
-  date: string,
-  action: string,
-  state: string
+  hardwareID: string;
+  hardwareName: string;
+  date: string;
+  action: string;
+  state: string;
 }
